@@ -10,7 +10,7 @@
 1. **Clone the Repository**:
    Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/vardhan376/sysopctl_command.git
+   git clone https://github.com/vardhan376/sysopctl_custom_command.git
    ```
 
 2. **Make the Script Executable**:
