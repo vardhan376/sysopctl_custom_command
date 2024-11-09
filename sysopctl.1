@@ -1,0 +1,92 @@
+.\" Man page for sysopctl
+.TH SYSOPCTL 1 "November 2024" "v0.1.0" "sysopctl Manual"
+
+.SH NAME
+sysopctl \- a custom system management command for macOS
+
+.SH SYNOPSIS
+.B sysopctl
+[\fIcommand\fR] [\fIoptions\fR]
+
+.SH DESCRIPTION
+.B sysopctl
+is a command-line tool designed for managing services, monitoring system health, and handling backups on macOS. It provides a range of options for system administration tasks.
+
+.SH OPTIONS
+.TP
+.B --help
+Show help information, listing all available commands and usage examples.
+.TP
+.B --version
+Display the version information of the command.
+
+.SH COMMANDS
+.TP
+.B service list
+List all running services. Similar to `systemctl list-units --type=service` on Linux.
+.TP
+.B system load
+Display the current system load averages. Equivalent to the output of `uptime`.
+.TP
+.B service start <service-name>
+Start a specified service, identified by its `launchd` service name.
+.TP
+.B service stop <service-name>
+Stop a specified service, identified by its `launchd` service name.
+.TP
+.B disk usage
+Display disk usage information for all mounted partitions.
+.TP
+.B process monitor
+Display real-time system process activity. Similar to `top`.
+.TP
+.B logs analyze
+Analyze recent system logs for critical error entries within the last hour.
+.TP
+.B backup <path>
+Create a backup of the specified file or directory to `~/backup/`.
+
+.SH EXAMPLES
+Here are some examples of how to use
+.B sysopctl:
+
+List all running services:
+.nf
+    $ sysopctl service list
+.fi
+
+Start a service:
+.nf
+    $ sysopctl service start com.apple.sshd
+.fi
+
+Stop a service:
+.nf
+    $ sysopctl service stop com.apple.sshd
+.fi
+
+View disk usage:
+.nf
+    $ sysopctl disk usage
+.fi
+
+Monitor processes:
+.nf
+    $ sysopctl process monitor
+.fi
+
+Analyze logs:
+.nf
+    $ sysopctl logs analyze
+.fi
+
+Create a backup:
+.nf
+    $ sysopctl backup ~/Documents
+.fi
+
+.SH AUTHOR
+Created by [Your Name]
+
+.SH VERSION
+sysopctl version v0.1.0
